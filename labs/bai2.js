@@ -17,6 +17,6 @@ function Book(title, author, year, price) {
 }
 
 
-const book = Book("JavaScript Cơ Bản", "Bùi Quang Công", 2024, 150000);
+const book = Book("JavaScript Cơ Bản", "Tran Tuan Hung", 2025, 160000);
 console.log(book.getBookInfo());
 console.log(book.calculateDiscount(20));
