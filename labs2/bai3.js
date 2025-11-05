@@ -1,0 +1,21 @@
+// Tạo template cho email thông báo
+const user = {
+  firstName: "Nguyen",
+  lastName: "Van A",
+  product: "Laptop Dell XPS",
+  price: 25000000,
+  orderDate: "2024-01-15",
+};
+
+// Tạo template string cho email
+const emailTemplate = `
+xin chào ${user.firstName} ${user.lastName},
+Cảm ơn bạn đã mua sản phẩm ${user.product} của chúng tôi.   
+Chi tiết đơn hàng của bạn như sau:
+- Sản phẩm: ${user.product}
+- Giá: ${user.price} VND
+- Ngày đặt hàng: ${user.orderDate}
+
+`; // Viết template ở đây
+
+console.log(emailTemplate);
