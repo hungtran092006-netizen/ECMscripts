@@ -35,6 +35,8 @@ const createProduct = ({
   brand,
   inStock
 });
+createProduct({ name: "Phone", price: 5000 });
+
 
 // bai 4
 // Tạo hàm shoppingCart với:
