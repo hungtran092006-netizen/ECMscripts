@@ -42,3 +42,14 @@ function createProduct({ name, price, category = "general", inStock = true }) {
 const product = createProduct({ name: "Laptop", price: 999 });
 console.log(product);
 // { name: 'Laptop', price: 999, category: 'general', inStock: true }
+
+// Viết lại hàm này sử dụng async/await
+function processOrder(orderId, callback) {
+  getOrder(orderId, (order) => {
+    getUser(order.userId, (user) => {
+      getProducts(order.productIds, (products) => {
+        callback({ order, user, products });
+      });
+    });
+  });
+}
