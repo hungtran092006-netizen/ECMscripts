@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { toursAPI } from "../services/api";
 import TourCard from "../components/TourCard";
 
+
 function Tours() {
     const [tours, setTours] = useState([]);
     const [loading, setLoading] = useState(true);

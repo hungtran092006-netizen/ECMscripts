@@ -1,29 +1,25 @@
-import Button from './Button'
+import { Link } from "react-router-dom";
 
-export default function TourCard({ title, image, price }) {
+function TourCard({ tour }) {
+    // Component này nhận tour qua props và hiển thị đẹp mắt từng tour
     return (
-        <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition p-4">
-
-            {/* Ảnh */}
-            <img
-                src={image}
-                alt={title}
-                className="w-full h-60 object-cover rounded-xl"
-            />
-
-            {/* Tiêu đề */}
-            <h2 className="text-2xl font-bold text-orange-400 mt-4">{title}</h2>
-
-            {/* Giá – nếu không có sẽ hiện Liên hệ */}
-            <p className="text-red-500 font-bold text-xl mt-2">
-                {price ? price.toLocaleString() + " đ" : "Liên hệ"}
-            </p>
-
-            {/* Nút */}
-            <div className="flex justify-between mt-4">
-                <Button label="Xem chi tiết" />
-                <Button label="Đặt tour" />
+        <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <img src={tour.image} alt={tour.name} className="w-full h-48 object-cover" />
+            <div className="p-4">
+                <h3 className="text-xl font-bold text-gray-800 mb-2">{tour.name}</h3>
+                <p className="text-gray-600 mb-2">{tour.destination}</p>
+                <p className="text-blue-600 font-semibold mb-2">
+                    {tour.price.toLocaleString("vi-VN")} đ
+                </p>
+                <Link
+                    to={`/tours/${tour.id}`}
+                    className="inline-block mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                >
+                    Xem chi tiết
+                </Link>
             </div>
         </div>
-    )
+    );
 }
+
+export default TourCard;
